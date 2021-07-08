@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModelLayout"
+            type="com.example.examentvmaze.view.movie_list.MoviesViewModel" />
+
+        <variable
+            name="movie"
+            type="com.example.examentvmaze.retrofit.model.TVMovie" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{ () -> viewModelLayout.selectMovie(movie.show.id) }">
+
+        <ImageView
+            android:id="@+id/tvImageMovie"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_100"
+            android:layout_marginStart="@dimen/dp_10"
+            app:imageGlide="@{ movie.show.image.medium }"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvNameMovie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:text="@{ movie.show.name == null? @string/movie_title: movie.show.name }"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tvNameNetworkMovie"
+            app:layout_constraintStart_toEndOf="@+id/tvImageMovie" />
+
+        <TextView
+            android:id="@+id/tvNameNetworkMovie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:text="@{ movie.show.network.name == null? @string/unknown_network: movie.show.network.name }"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvImageMovie"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvDataMovie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            setContext="@{ context }"
+            android:layout_marginStart="@dimen/dp_10"
+            app:concatText="@{ movie }"
+            app:layout_constraintStart_toEndOf="@+id/tvImageMovie"
+            app:layout_constraintTop_toBottomOf="@+id/tvNameNetworkMovie" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

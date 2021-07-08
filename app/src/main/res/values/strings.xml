@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ExamenTvMaze</string>
+    <string name="search">Buscar</string>
+    <string name="nav_movies_label">Movies</string>
+    <string name="nav_detail_movie_label">Detail movie</string>
+    <string name="rating">Rating %1$s</string>
+    <string name="error_not_found">Algo salio mal</string>
+    <string name="gender">Géneros:</string>
+    <string name="schedule">Horario:</string>
+    <string name="schedule_item">%1$s | %2$s</string>
+    <string name="movie_title">Titulo</string>
+    <string name="visit_website">Visitar sitio</string>
+    <string name="synopsis"><b>Sinópsis</b></string>
+    <string name="synopsis_not_foud">Sinópsis no encontrada.</string>
+    <string name="genders_not_foud">Generos no encontrados.</string>
+    <string name="schedules_not_foud">Horarios no encontrados.</string>
+    <string name="unknown_network">n/a</string>
+    <string name="talents">Talentos</string>
+</resources>
